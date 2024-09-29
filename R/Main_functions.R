@@ -56,6 +56,7 @@ DEGage <- function(counts,
 
   #Performs genewise negative binomial regression, generates the df that is to be output with regression parameters
   outputdf <- run.NB.fitting(counts, group, cl)
+  message("survived regression")
   #outputdf <- run.ZINB.refitting(counts, group, outputdf, cl)
   outputdf$z.r1 <- rep(NA, nrow(outputdf))
   outputdf$z.r2 <- rep(NA, nrow(outputdf))
