@@ -57,6 +57,10 @@ DEGage <- function(counts,
   #Performs genewise negative binomial regression, generates the df that is to be output with regression parameters
   outputdf <- run.NB.fitting(counts, group, cl)
   #outputdf <- run.ZINB.refitting(counts, group, outputdf, cl)
+  outputdf$z.r1 <- rep(NA, nrow(outputdf))
+  outputdf$z.r2 <- rep(NA, nrow(outputdf))
+  outputdf$z.p1 <- rep(NA, nrow(outputdf))
+  outputdf$z.p1 <- rep(NA, nrow(outputdf))
 
   if(subsampled.k){
     message("calculating K - subsampling")
